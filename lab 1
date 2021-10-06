@@ -1,0 +1,119 @@
+'''
+Returneaza true daca n este prim si false daca nu.
+'''
+def is_prime(n):
+    if n<2:
+     return False
+    for i in range(2, n//2+1):
+        if n%i==0:
+            return False
+    return True
+assert is_prime(3) is True
+
+x=int(input("Dati nr.:"))
+if is_prime(x):
+    print("da")
+else:
+    print("nu")
+  
+  
+'''
+Returneaza produsul numerelor din lista lst.
+'''
+def get_product(lst):
+    p=1
+    for i in range(lst):
+        nr=int(input("element lista"))
+        p=p*nr
+    print(p)
+x=int(input("Dati nr.:"))
+get_product(x)
+  
+  
+'''
+Returneaza CMMDC a doua numere x si y folosind primul algoritm.
+'''
+def get_cmmdc_v1(x, y):
+    while(x!=y):
+        if(x>y):
+            x=x-y
+        else:
+            y=y-x
+    print("cmmdc al nr x si y este: ",x)
+x=int(input("primul nr"))
+y=int(input("al doilea nr" ))
+get_cmmdc_v1(x, y)
+  
+  
+'''
+Returneaza CMMDC a doua numere x si y folosind al doilea algoritm.
+'''
+def get_cmmdc_v2(x, y):
+     while(y!=0):
+        r=x%y
+        x=y
+        y=r
+    print("cmmdc este",x)
+x=int(input("primul n:"))
+y=int(input("al doilea nr:" ))
+get_cmmdc_v2(x, y)
+  
+  
+def is_prime(n):
+    if n<2:
+     return False
+    for i in range(2, n//2+1):
+        if n%i==0:
+            return False
+    return True
+def get_product(lst):
+    p=1
+    for i in range(lst):
+        nr=int(input("element lista"))
+        p=p*nr
+    print(p)
+
+
+def get_cmmdc_v2(x, y):
+    while (y != 0):
+        r = x % y
+        x = y
+        y = r
+    print("cmmdc este", x)
+
+
+def main():
+    print("1. Determinati daca nr. este prim")
+    print("2. Determinati produsul a n nr.")
+    print("3.Determinati cmmdc a doua nr.")
+    print("x. Iesire")
+    optiune=input("dati optiune: ")
+    if optiune=="1":
+        x = int(input("Dati nr.:"))
+        if is_prime(x):
+            print("da")
+        else:
+            print("nu")
+        main()
+    if optiune=="2":
+        x = int(input("Dati nr.:"))
+        get_product(x)
+        main()
+    if optiune=="3":
+        x = int(input("primul n:"))
+        y = int(input("al doilea nr:"))
+        get_cmmdc_v2(x, y)
+        main()
+    if optiune=="x":
+        print("interfata de tip consola a fost inchisa")
+    else:
+        print("optiune gresita")
+
+
+main()
+
+
+main()
+
+if __name__ == '__main__':
+  main()
